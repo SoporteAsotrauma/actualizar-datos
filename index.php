@@ -87,9 +87,15 @@ require(__DIR__ . '/includes/header.php');
 
             </div>
         </div>
+    <div class="form-check" style="margin-left: 17px; padding-bottom: 10px">
+        <input class="form-check-input" type="checkbox" id="aceptoTerminos" x-model="aceptaTerminos">
+        <label class="form-check-label" for="aceptoTerminos" style="font-size: 0.9rem;">
+            Acepto los términos y condiciones, la política de privacidad y el tratamiento de datos personales de Clínica Asotrauma S.A.S.
+        </label>
+    </div>
 
-        <div class="d-flex justify-content-between bg-[#077E9D] p-3 border-top">
-            <button type="submit" @click="actualizarDatos()" class="btn btn-warning btn-sm m-auto d-block">
+    <div class="d-flex justify-content-between bg-[#077E9D] p-3 border-top">
+            <button type="submit" :disabled="!aceptaTerminos" @click="actualizarDatos()" class="btn btn-warning btn-sm m-auto d-block">
                 Actualizar datos!
             </button>
         </div>

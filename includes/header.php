@@ -1,6 +1,6 @@
 <header class="bg-[#077E9D]">
     <div class="container p-3 flex items-center justify-between">
-        <img class="h-6" src="https://asotrauma.com.co/wp-content/uploads/2021/08/logo-asotrauma-w.svg" alt="logo-blanco">
+        <img class="h-6" style="width: 200px" src="https://asotrauma.com.co/wp-content/uploads/2021/08/logo-asotrauma-w.svg" alt="logo-blanco">
     </div>
 </header>
 

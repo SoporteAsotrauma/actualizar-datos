@@ -76,6 +76,16 @@ function updateInformacion($datos)
         ";
         ConnectionFox::con()->exec($query2);
 
+        // Conexión a MySQL
+        $pdo_mysql = new PDO("mysql:host=192.168.1.1;dbname=calidad", "local", "@sotrauma#");
+        $pdo_mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Insert en la tabla actualizacion_datos
+        $query3 = "INSERT INTO actualizacion_datos (documento, fecha_reg, acepto) VALUES (:documento, NOW(), 'Y')";
+        $stmt = $pdo_mysql->prepare($query3);
+        $stmt->bindParam(':documento', $datos['documento'], PDO::PARAM_STR);
+        $stmt->execute();
+
         return [
             "status" => true,
             "message" => "Información actualizada correctamente"

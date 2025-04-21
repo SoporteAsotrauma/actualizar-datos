@@ -3,6 +3,7 @@ function actualizarDatosComponent() {
         paciente: {},
         documento: '',
         nombre: '',
+        aceptaTerminos: false,
         getInformacionPaciente() {
             // Mostrar la alerta de "buscando información"
             iziToast.show({
